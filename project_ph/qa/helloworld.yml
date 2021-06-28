@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  env.prefix: QaV2
+  env.prefix: Qa
 kind: ConfigMap
 metadata:
   labels:
     app: helloworld
     env: qa
-  name: qa-properties-8kh7726tgf
+  name: qa-properties-fhg599627h
   namespace: qa
 ---
 apiVersion: v1
@@ -60,7 +60,7 @@ spec:
           valueFrom:
             configMapKeyRef:
               key: env.prefix
-              name: qa-properties-8kh7726tgf
+              name: qa-properties-fhg599627h
         image: tykola/hello-spring:qa
         imagePullPolicy: Always
         name: hello-world-pod
