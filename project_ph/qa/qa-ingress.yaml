@@ -1,0 +1,19 @@
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: minimal-ingress
+  namespace: qa
+spec:
+  rules:
+  - host: qa.com
+    http:
+      paths:
+      - backend:
+          serviceName: argocd-service
+          servicePort: 8080
+        path: /argo
+      - backend:
+          serviceName: hello-world-service
+          servicePort: 8080
+        path: /
